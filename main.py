@@ -2,7 +2,9 @@ from pathlib import Path
 import pandas as pd
 import fileSelector
 import re
+import updater
 
+updater.main()
 
 def filtrar_observacion(df, criterio):
     """Filtra registros donde al menos uno de los términos en 'Observation' coincida con el criterio."""
@@ -198,3 +200,15 @@ def limpiar_codigo(s):
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
