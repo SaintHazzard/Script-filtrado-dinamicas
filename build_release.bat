@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set VERSION=1.0.3
+set VERSION=1.0.4
 set REPO=SaintHazzard/Script-filtrado-dinamicas
 set BUILD_DIR=build
 set DIST_DIR=dist

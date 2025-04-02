@@ -3,7 +3,7 @@ import requests
 from pathlib import Path
 
 URL_VERSION = "https://raw.githubusercontent.com/SaintHazzard/Script-filtrado-dinamicas/main/version.json"
-VERSION_LOCAL = "1.0.3"
+VERSION_LOCAL = "1.0.4"
 
 def verificar_actualizacion():
     try:

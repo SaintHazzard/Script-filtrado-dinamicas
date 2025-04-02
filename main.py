@@ -163,7 +163,7 @@ def agregar_totales_en_detalle(criterio):
     df_resumen['costo+iva'] = df_resumen['DIST-BASE'] * 1.19
     df_resumen['nalsani_descuento'] = df_resumen['DIST-BASE'] * (df_resumen['DiscountPercentage']/ 100)
     df_resumen['martinez_descuento'] = df_resumen['Price'] * (df_resumen['DiscountPercentage']/ 100)
-    df_resumen['nota-credito'] = df_resumen['Price'] * (df_resumen['nalsani_descuento'] * df_resumen['PART TOTTO'])
+    df_resumen['nota-credito'] = (df_resumen['nalsani_descuento'] * df_resumen['PART TOTTO'])
     df_resumen['profit'] = (
         df_resumen['TotalSale'] - (df_resumen['DIST-BASE'] * 1.19) + (df_resumen['nalsani_descuento'] * df_resumen['PART TOTTO'])
     )
