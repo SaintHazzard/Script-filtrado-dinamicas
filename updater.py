@@ -1,6 +1,5 @@
-import requests
-import os
 import sys
+import requests
 from pathlib import Path
 
 URL_VERSION = "https://raw.githubusercontent.com/SaintHazzard/Script-filtrado-dinamicas/main/version.json"
@@ -21,7 +20,7 @@ def verificar_actualizacion():
         return None
 
 def descargar_actualizacion(url, version):
-    print("⬇️ Descargando nueva versión...")
+    print(f"⬇️ Descargando nueva versión: v{version}...")
     nombre_exe = f"consolidado-dinamicas-v{version}.exe"
     temp_path = Path(nombre_exe)
 
@@ -33,27 +32,18 @@ def descargar_actualizacion(url, version):
     print(f"✅ Descarga completada: {nombre_exe}")
     return temp_path
 
-def reemplazar_y_ejecutar(nuevo_exe):
-    actual_exe = Path(sys.executable)
-    print(f"📄 Simulación: Reemplazar {actual_exe} con {nuevo_exe}")
-    # os.remove(actual_exe)
-    # nuevo_exe.rename(actual_exe)
-    # os.startfile(actual_exe)
-    # # Eliminar el actual
-    # os.remove(actual_exe)
-    # # Renombrar el nuevo como el original
-    # nuevo_exe.rename(actual_exe)
-    # print("🚀 Aplicación actualizada. Reiniciando...")
-    # os.startfile(actual_exe)
-    sys.exit()
-
 def main():
     data = verificar_actualizacion()
     if data:
-        nuevo_exe = descargar_actualizacion(data["url"], data["version"])
-        reemplazar_y_ejecutar(nuevo_exe)
+        descargar_actualizacion(data["url"], data["version"])
+        print("ℹ️ La nueva versión fue descargada. Cerrar esta y abrir la nueva manualmente.")
+        input("🔘 Presioná Enter para salir...")
+        sys.exit()
     else:
         print("👍 No hay actualizaciones.")
+        input("🔘 Presioná Enter para cerrar...")
+    sys.exit()
+
 
 if __name__ == "__main__":
     main()
