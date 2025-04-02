@@ -42,7 +42,6 @@ def main():
     else:
         print("👍 No hay actualizaciones.")
         input("🔘 Presioná Enter para cerrar...")
-    sys.exit()
 
 
 if __name__ == "__main__":
