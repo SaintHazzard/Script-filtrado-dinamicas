@@ -41,7 +41,7 @@ def main():
         sys.exit()
     else:
         print("👍 No hay actualizaciones.")
-        input("🔘 Presioná Enter para cerrar...")
+        input("🔘 Presioná Enter para continuar con la carga de archivos...")
 
 
 if __name__ == "__main__":
