@@ -1,4 +1,4 @@
 build/*
-dist/*
-dist/data/*
 main.spec
+__pycache__/*
+releases/*
